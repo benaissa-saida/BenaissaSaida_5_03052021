@@ -1,3 +1,6 @@
 Ici vous trouverez le front-end du site ORINOCO..
+Le site traitera des appareils photos. 
 
-La création des pages produits et de la page d'accueil vient d'être faite.
+Installation: 
+
+Pour que le front fonctionne, il faudra utiliser le back-end.
