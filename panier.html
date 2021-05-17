@@ -1,138 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orinoco</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Orinoco</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="./style.css">
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
-</head>
-<body>
-  <div class="container-fluid">
-    <header>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <div class="container header-inner">
-          <a class="navbar-brand" href="./index.html"><h1><i class="bi bi-chevron-left">Orinoco</i></h1></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarsExample01">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link text-size" href="./commande.html">Commandes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-size" href="#"><i class="bi bi-basket2"></i> Panier</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="container">
-        <h2 class="text-center mt-5 py-5">Votre panier</h2>
-        <div class="justify-content-center text-center row py-5">
-          <table class="table table-bordered table-dark">
-            <thead>
-              <tr>
-                <th scope="col">Produit</th>
-                <th scope="col">Lentilles</th>
-                <th scope="col">Quantité</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Sous-total:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" id="product">
-                  <img src="#" alt="mini-img" class="img">
-                </th>
-                <th id="lenses">...</th>     
-                <th id="productQuantity">
-                  <span class="product__quantity">
-                    <select class="product__dropdown" id="btn-product-quantity">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </span>
-                </th>
-                <th id="price">0</th> 
-                <th id="sousTotal">0</th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section class="container">
-        <div id="showByDefault" class="justify-content-center text-center col my-5">
-          <h2>Votre Panier est vide !</h2>
-          <h3>Revoir les produits ?</h3>
-          <a href="./index.html" class="btn btn-outline-primary">Retour aux produits</a>
-        </div>
-        <form id="hiddenByDefault">
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Nom">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Prénom">
-            </div>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+          <div class="container header-inner">
+            <a class="navbar-brand" href="./index.html"><h1><i class="bi bi-chevron-left">Orinoco</i></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </div>
-          <div class="form-row mt-2">
-            <div class="form-group col-md-7">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail">
+          <div class="collapse navbar-collapse" id="navbarsExample01">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-size" href="./commande.html">Commandes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-size" href="#"><i class="bi bi-basket2"></i> Panier</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="container">
+          <h2 class="text-center mt-5 py-5">Votre panier</h2>
+          <div class="justify-content-center text-center row py-5">
+            <table class="table table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Produit</th>
+                  <th scope="col">Lentilles</th>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col">Sous-total:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" id="product">
+                    <p id="emptyproduct">...</p>
+                    <img src="#" alt="mini-img" class="img">
+                  </th>
+                  <th id="lenses">...</th>     
+                  <th id="productQuantity">
+                    <span class="product__quantity">
+                      <select class="product__dropdown" id="btn-product-quantity">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </span>
+                  </th>
+                  <th id="price">0</th> 
+                  <th id="sousTotal">0</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="container">
+          <div id="showByDefault" class="justify-content-center text-center col my-5">
+            <h2>Votre Panier est vide !</h2>
+            <h3>Revoir les produits ?</h3>
+            <a href="./index.html" class="btn btn-outline-primary">Retour aux produits</a>
+          </div>
+          <form id="hiddenByDefault" class="form">
+            <p><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Nom">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Prénom">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress">Addresse</label>
-            <input type="text" class="form-control" id="inputAddress">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Complément d'adresse</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="N°Appartement, étage, etc..">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">Ville</label>
-              <input type="text" class="form-control" id="inputCity">
+            <div class="form-row mt-2">
+              <div class="form-group col-md-7">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail">
+              </div>
             </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Code Postal</label>
-              <input type="text" class="form-control" id="inputZip">
+            <div class="form-group">
+              <label for="inputAddress">Addresse</label>
+              <input type="text" class="form-control" id="inputAddress">
             </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
-      </section>  
-    </main>
-    <footer class="jumbotron bg-light mt-4 mb-0">
-      <ul class="list-inline text-center">
-        <li class="list-inline-item">
-          <a class="text-size" href="#">Mentions légales</a>
-        </li>
-        <li class="list-inline-item">&nldr;</li>
-        <li class="list-inline-item">
-          <a class="text-size" href="#">À propos</a>
-        </li>
-        <li class="list-inline-item">&nldr;</li>
-        <li class="list-inline-item">
-          <a class="text-size" href="#">Contact</a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-</body>
+            <div class="form-group">
+              <label for="inputAddress2">Complément d'adresse</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="N°Appartement, étage, etc..">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Ville</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Code Postal</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <button id="formValidate" type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </section>  
+      </main>
+      <footer class="jumbotron bg-light mt-4 mb-0">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a class="text-size" href="#">Mentions légales</a>
+          </li>
+          <li class="list-inline-item">&nldr;</li>
+          <li class="list-inline-item">
+            <a class="text-size" href="#">À propos</a>
+          </li>
+          <li class="list-inline-item">&nldr;</li>
+          <li class="list-inline-item">
+            <a class="text-size" href="#">Contact</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <script src="panier.js" defer></script>
+  </body>
 </html>

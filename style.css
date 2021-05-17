@@ -28,6 +28,7 @@ i{
 .popup{
   margin: 10% auto;
   width : 70%;
+  min-width: 15rem;
   background-color: rgb(243, 243, 243);
   padding: 1em;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
@@ -35,7 +36,8 @@ i{
 }
 .btnClose {
   float: right;
-  font-size:16pt;
+  font-size:16px;
   cursor: pointer;
   color: rgb(26, 26, 26);
 }
+
