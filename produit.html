@@ -38,21 +38,21 @@
       </header>
       <main class="container">
         <h2 class="text-center mt-5 py-5">Votre sélection</h2>
-        <div class="text-center d-flex justify-content-center flex-wrap py-5">
-          <figure class="card col-12 col-lg-5">
+        <div class="text-center d-flex justify-content-center flex-wrap mt-5 py-5">
+          <figure class="card col-12 col-lg-6">
             <img src="" class="card-img-top" id="imageProduct" alt="img-appareil-photo">
-            <figcaption>
-              <h3 id="titleProduct">Titre Produit</h3>
+            <figcaption  class="px-3">
+              <h3 id="titleProduct" class="mt-3">Titre Produit</h3>
               <p id="descriptionProduct">Ceci est une description</p>
               <label id="lensesProduct" for="lenses">Choisissez les lentilles de votre caméra :</label>
               <select name="camera-lenses" id="lenses"></select>
               <br>
               <span id="priceProduct">Prix</span>
-              <br>
-              <button id="basket" class="btnPopup btn btn-primary btn-block mt-2 my-3"><i class="bi bi-bag"></i> Ajouter au panier</button>
-              <div id="overlay" class="overlay">
+            </figcaption>
+            <button id="basket" class="btnPopup btn btn-primary btn-block mt-4"><i class="bi bi-bag"></i> Ajouter au panier</button>
+            <div id="overlay" class="overlay">
                 <div id="popup" class="popup">
-                  <h4>Votre sélection a bien été ajoutée !<span id="btnClose" class="btnClose">&times;</span></h4>
+                  <h4>Hop! C'est dans le panier<span id="btnClose" class="btnClose">&times;</span></h4>
                   <p> Que souhaitez vous faire ? </p>
                   <div>
                     <a href="./index.html" class="btn btn-outline-primary pr-4 mx-3" type="button"><i class="bi bi-arrow-left-short"></i> Continuez mes achats</a>
@@ -60,7 +60,6 @@
                   </div>
                 </div>
               </div>
-            </figcaption>
           </figure>
         </div>
       </main>
@@ -80,6 +79,7 @@
         </ul>
       </footer>
     </div>
+    <script src="ajax.js" defer></script>
     <script src="produit.js" defer></script>
   </body>
 </html>

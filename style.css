@@ -41,3 +41,6 @@ i{
   color: rgb(26, 26, 26);
 }
 
+.col-12, .col-lg-6{
+  padding: 0; 
+}

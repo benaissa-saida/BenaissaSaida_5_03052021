@@ -1,37 +1,24 @@
-// ************************* FONCTION APPEL AJAX **************************
-function ajaxPost(url, data) {
-    const promise = new Promise(function(resolve, reject){
-        let request = new XMLHttpRequest();
-        request.open('POST', url);
-        request.setRequestHeader('content-Type', 'application/json');
-        request.onreadystatechange = function(){
-            if (request.status >= 200 && request.status < 400){
-                resolve(JSON.parse(request.responseText));
-            } else {
-                reject (request.status);
-            } 
-        };
-        request.send(data);
-    });
-    return promise;
+// // ************************* VARIABLES APPEL AJAX **************************
+const sendData = (url) => {
+  sendHttpRequest('POST', url)
 }
 
-// *********************** FONCTION EXÉCUTE APPEL *************************
+// // *********************** FONCTION EXÉCUTE APPEL *************************
 
-function ajaxGet(url) {
-    const promise = new Promise(function (resolve, reject) {
-      const request = new XMLHttpRequest();
-      request.open("GET", url, true);
-      request.onreadystatechange = function () {
-        if (request.readyState === 4) {
-          if (request.status === 200) {
-            resolve(JSON.parse(request.responseText));
-          } else {
-            reject(request.status);
-          }
-        }
-      };
-      request.send();
-    });
-    return promise;
+function sendHttpRequest(method, url, data){
+  return fetch(url, {
+    method : method, 
+    body: JSON.stringify(data),
+    headers : data ? {'Content-Type': 'application/json'} : {}
+  }).then(response => {
+    if (response.status >= 400) {
+      //!reponse.ok
+      return response.json().then(errResData => {
+        const error = new Error('Quelque chose cloche!');
+        error.data = errResData;
+        throw error;
+      });
+    }
+    return response.json();
+  })
 }

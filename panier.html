@@ -53,10 +53,12 @@
               <tbody>
                 <tr>
                   <th scope="row" id="product">
-                    <p id="emptyproduct">...</p>
-                    <img src="#" alt="mini-img" class="img">
+                    <p class="emptyProduct">...</p>
+                    <img src="#" alt="mini-img" id="img">
                   </th>
-                  <th id="lenses">...</th>     
+                  <th id="lenses">
+                    <span class="emptyLenses">...</span>
+                  </th>     
                   <th id="productQuantity">
                     <span class="product__quantity">
                       <select class="product__dropdown" id="btn-product-quantity">
@@ -69,51 +71,47 @@
                       </select>
                     </span>
                   </th>
-                  <th id="price">0</th> 
-                  <th id="sousTotal">0</th>
+                  <th id="price">
+                    <span class="emptyPrice">0</span>
+                  </th> 
+                  <th id="sousTotal">
+                    <span class="emptySousTotal">0</span>
+                  </th>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
         <section class="container">
-          <div id="showByDefault" class="justify-content-center text-center col my-5">
-            <h2>Votre Panier est vide !</h2>
-            <h3>Revoir les produits ?</h3>
-            <a href="./index.html" class="btn btn-outline-primary">Retour aux produits</a>
-          </div>
-          <form id="hiddenByDefault" class="form">
+          
+          <form class="form">
             <p><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Nom">
+                <input type="text" class="form-control" placeholder="Nom" id="nom">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Prénom">
+                <input type="text" class="form-control" placeholder="Prénom" id="prenom">
               </div>
             </div>
             <div class="form-row mt-2">
               <div class="form-group col-md-7">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputAddress">Addresse</label>
-              <input type="text" class="form-control" id="inputAddress">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Complément d'adresse</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="N°Appartement, étage, etc..">
+              <label for="address">Addresse</label>
+              <input type="text" class="form-control" id="address">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Ville</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for="city">Ville</label>
+                <input type="text" class="form-control" id="city">
               </div>
               <div class="form-group col-md-2">
-                <label for="inputZip">Code Postal</label>
-                <input type="text" class="form-control" id="inputZip">
+                <label for="zip">Code Postal</label>
+                <input type="text" class="form-control" id="zip">
               </div>
             </div>
             <button id="formValidate" type="submit" class="btn btn-primary">Envoyer</button>
@@ -136,6 +134,7 @@
         </ul>
       </footer>
     </div>
+    <script src="ajax.js" defer></script>
     <script src="panier.js" defer></script>
   </body>
 </html>
