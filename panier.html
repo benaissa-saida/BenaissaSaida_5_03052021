@@ -44,39 +44,34 @@
               <thead>
                 <tr>
                   <th scope="col">Produit</th>
-                  <th scope="col">Lentilles</th>
                   <th scope="col">Quantité</th>
-                  <th scope="col">Prix</th>
-                  <th scope="col">Sous-total:</th>
+                  <th scope="col" colspan="2">Prix</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="tab">
+                <colgroup span="5" class="columns"></colgroup>
+                <tr scope="row" class="product">
+                  <td>
+                    <div class="prod container d-flex bor flex-column align-items-center justify-content-center">
+                      ...
+                    <img src="" alt="mini-img" class="img"> 
+                    </div>
+                  </td>
+                  <td class="quantity">
+                    <p class="selectedQty">...</p>
+                    
+                  </td> 
+
+                  <td class="price" colspan="2">
+                    0
+                  </td> 
+                  
+                </tr>
                 <tr>
-                  <th scope="row" id="product">
-                    <p class="emptyProduct">...</p>
-                    <img src="#" alt="mini-img" id="img">
-                  </th>
-                  <th id="lenses">
-                    <span class="emptyLenses">...</span>
-                  </th>     
-                  <th id="productQuantity">
-                    <span class="product__quantity">
-                      <select class="product__dropdown" id="btn-product-quantity">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </span>
-                  </th>
-                  <th id="price">
-                    <span class="emptyPrice">0</span>
-                  </th> 
-                  <th id="sousTotal">
-                    <span class="emptySousTotal">0</span>
-                  </th>
+                  <th scope="row" colspan="3">Sous-total:</th>
+                  <td class="sousTotal" >
+                    0
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -84,14 +79,14 @@
         </section>
         <section class="container">
           
-          <form class="form">
+          <form class="form hidden" >
             <p><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Nom" id="nom">
+                <input type="text" class="form-control" placeholder="Nom" id="lastName">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Prénom" id="prenom">
+                <input type="text" class="form-control" placeholder="Prénom" id="firstName">
               </div>
             </div>
             <div class="form-row mt-2">
@@ -108,10 +103,6 @@
               <div class="form-group col-md-6">
                 <label for="city">Ville</label>
                 <input type="text" class="form-control" id="city">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="zip">Code Postal</label>
-                <input type="text" class="form-control" id="zip">
               </div>
             </div>
             <button id="formValidate" type="submit" class="btn btn-primary">Envoyer</button>
@@ -134,7 +125,7 @@
         </ul>
       </footer>
     </div>
-    <script src="ajax.js" defer></script>
-    <script src="panier.js" defer></script>
+    <script src="ajax.js"></script>
+    <script src="panier.js"></script>
   </body>
 </html>

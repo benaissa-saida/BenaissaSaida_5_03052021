@@ -5,7 +5,7 @@ const clonedCard = document.getElementById("card");
 
 // ********************************* GET ************************************
 const getDataMain = (url) => {
-  sendHttpRequest('GET', url ).then(response =>{
+  sendAll('GET', url ).then(response =>{
     showCard(response);
     fillUpCard(response);
   })
@@ -43,7 +43,7 @@ function fillUpCard(response) {
     img[i].setAttribute( "object-fit", "cover");
     title[i].textContent = "Appareil photo " + response[i].name;
     description[i].textContent = response[i].description;
-    price[i].textContent = response[i].price + " €";
+    price[i].textContent = response[i].price+ " €";
 
     const productPage = document.querySelectorAll(".pageProduct");
     productPage[i].href = "produit.html?/id=" + response[i]._id;
