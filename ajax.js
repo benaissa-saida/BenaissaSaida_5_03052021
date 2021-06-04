@@ -1,16 +1,12 @@
 // // ************************* VARIABLES APPEL AJAX **************************
-const sendData = (url) => {
-  sendHttpRequest('POST', url)
-}
+const urlApiCameras = "http://localhost:3000/api/cameras";
 
-// // *********************** FONCTION EXÉCUTE APPEL *************************
 
-function sendAll(method, url, data){
-  const result = fetch(url, {
-    method : method, 
-    body: JSON.stringify(data),
-    headers : data ? {'Content-Type': 'application/json'} : {}
-  }).then(response => {
+
+const getAll = async apiUrl => {
+
+  const result = fetch(apiUrl)
+  .then(response => {
     if (response.status >= 400) {
       //!reponse.ok
       return response.json().then(errResData => {
@@ -29,16 +25,13 @@ function sendAll(method, url, data){
     return data
   })
   return result
-}
+    
+};
 
+const getId = async apiUrl => {
 
-
-function sendId(method, url, data){
-  const result = fetch(url, {
-    method : method, 
-    body: JSON.stringify(data),
-    headers : data ? {'Content-Type': 'application/json'} : {}
-  }).then(response => {
+  const result = fetch(apiUrl)
+  .then(response => {
     if (response.status >= 400) {
       //!reponse.ok
       return response.json().then(errResData => {
@@ -57,4 +50,33 @@ function sendId(method, url, data){
     return data
   })
   return result
-}
+    
+};
+
+
+//***********************************************************************************************
+
+
+// function sendData(contact, products) {
+//   const data = {
+//     "contact": contact,
+//     "products": products
+//   }
+//   console.log(data)
+//   const result = fetch('http://localhost:3000/api/cameras/order', {  //fetch méthode qui fait un appel au serveur 
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+//   })
+//     .then(response => response.text())
+//     .then(result => JSON.parse(result)) //JSON.parse() = transforme du text en JSON
+//     .catch(error => console.log('error', error));
+
+//   return result
+
+
+
+// // *********************** FONCTION EXÉCUTE APPEL *************************
+
