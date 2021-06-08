@@ -10,7 +10,7 @@ let productTitle = document.getElementById("titleProduct");
 let productDescrip = document.getElementById("descriptionProduct");
 let productLenses = document.getElementById("lenses");
 let productPrice = document.getElementById("priceProduct");
-let basket = document.getElementById("basket");
+
 
 let product; 
 
@@ -46,15 +46,6 @@ getId(url)
 
 // *************************** FUNCTION PRODUCT *********************************
 const productCard = (productToShow) => {
-
-  //Structure de notre input quantité
-  // let quantityProd = `<select id="select-${}" name="quantityOfProduct">
-  // <option value="1" selected > 1 </option>
-  // <option value="2"> 2 </option>
-  // <option value="3"> 3 </option>
-  // <option value="4"> 4 </option>
-  // </select>`
-  // document.getElementById('rowSelect').innerHTML = quantityProd;
   
   
   let productLensesChoice = productToShow.lenses;
@@ -81,7 +72,7 @@ const productCard = (productToShow) => {
 addStorage =  (product) => {
  /* Fonction qui permettra aux choix des utilisateurs 
  /* de rester stockés sur leur page de navigation */
-  addbasket = () =>{ 
+  addCart = () =>{ 
 
     let objectStorage = localStorage.getItem("object") ? JSON.parse(localStorage.getItem("object")) : [];
 
@@ -90,7 +81,7 @@ addStorage =  (product) => {
     checkProduct.quantity++;
     } else {
     product.quantity = 1;
-    objectStorage.push(product, lenses.value);
+    objectStorage.push(product);
     }
 
 
@@ -98,6 +89,6 @@ addStorage =  (product) => {
 
     console.log(localStorage);
   } 
-  basket.addEventListener("click", addbasket);
+  document.getElementById("cart").addEventListener("click", addCart);
 }
 

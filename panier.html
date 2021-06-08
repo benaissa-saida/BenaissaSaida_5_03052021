@@ -41,62 +41,58 @@
           <h2 class="text-center mt-5 py-5">Votre panier</h2>
           <div class="justify-content-center text-center row py-5">
             <table class="table table-bordered table-dark">
-             
-              <tbody id="listProduct">
-                <!-- <colgroup span="5" class="columns"></colgroup>
-                <tr scope="row" class="product">
-                  <td>
-                    <div class="prod container d-flex bor flex-column align-items-center justify-content-center">
-                      ...
-                    <img src="" alt="mini-img" class="img"> 
-                    </div>
-                  </td>
-                  <td class="quantity">
-                    <p class="selectedQty">...</p>
-                    
-                  </td> 
-
-                  <td class="price" colspan="2">
-                    0
-                  </td> 
-                  
+              <thead>
+                <tr class="align-middle text-center d-none d-md-table-row">
+                    <th></th>
+                  <th scope="col" class="fw-light">Produit</th>
+                  <th scope="col" class="fw-light">Prix</th>
+                  <th scope="col" class="fw-light">Quantité</th>
+                  <th scope="col" class="fw-light">Sous-total</th>
                 </tr>
-                <tr>
-                  <th scope="row" colspan="3">Sous-total:</th>
-                  <td class="sousTotal" >
+            </thead>
+              <tbody id="listProduct">
+              </tbody>
+              <tfoot>
+                <tr class="align-middle d-flex flex-column  align-items-center d-md-table-row mb-4 gap-2 container-sm">
+                  <th scope="row" colspan="4">Total:</th>
+                  <td id="totalPrice" >
                     0
                   </td>
-                </tr> -->
-              </tbody>
+                </tr> 
+              </tfoot>
             </table> 
           </div>
         </section>
-        <section class="container">
+        <section class="container container-lg ">
           <div id="form-err"></div>
           <form id="form" class="hidden" onsubmit="return sendForm(event)">
-            <p class="text-center"><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
-            <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Nom" id="lastName">
+            <p class=""><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
+            <div class="form-row mb-2 g-2">
+              <div class="col-md-4 mb-2">
+                <label for="firstName">Nom</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Nom" required>
               </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Prénom" id="firstName">
+              <div class="col-md-3 mb-2">
+                <label for="lastName">Prénom</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Prénom" required>
               </div>
-            </div>
-            <div class="form-row mt-2">
-              <div class="form-group col-md-7">
+              <div class="form-group col-md-7 mb-2">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" placeholder="exemple@domaine.com" required>
+              </div>
+              <div class="form-group col-md-7 mb-2">
+                <label for="adress">Adresse</label>
+                <input type="text" class="form-control" id="address"  required>
               </div>
             </div>
-            <div class="form-group">
-              <label for="address">Addresse</label>
-              <input type="text" class="form-control" id="address">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
+            <div class="form-row mb-2">
+              <div class="form-group col-md-2">
+                <label for="zip">Code Postal</label>
+                <input type="text" class="form-control" id="zip" required>
+              </div>
+              <div class="form-group col-md-5">
                 <label for="city">Ville</label>
-                <input type="text" class="form-control" id="city">
+                <input type="text" class="form-control" id="city" required>
               </div>
             </div>
             <button id="formValidate" type="submit" class="btn btn-primary">Envoyer</button>
@@ -120,6 +116,8 @@
       </footer>
     </div>
     <script src="ajax.js"></script>
+    <script src="utils.js"></script>
     <script src="panier.js"></script>
+    <script src="formulaire.js"></script>
   </body>
 </html>

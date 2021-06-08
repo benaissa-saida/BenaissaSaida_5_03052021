@@ -57,26 +57,22 @@ const getId = async apiUrl => {
 //***********************************************************************************************
 
 
-// function sendData(contact, products) {
-//   const data = {
-//     "contact": contact,
-//     "products": products
-//   }
-//   console.log(data)
-//   const result = fetch('http://localhost:3000/api/cameras/order', {  //fetch méthode qui fait un appel au serveur 
-//     method: 'POST',
-//     body: JSON.stringify(data),
-//     headers: {
-//         'Content-Type': 'application/json'
-//     }
-//   })
-//     .then(response => response.text())
-//     .then(result => JSON.parse(result)) //JSON.parse() = transforme du text en JSON
-//     .catch(error => console.log('error', error));
-
-//   return result
-
-
-
-// // *********************** FONCTION EXÉCUTE APPEL *************************
-
+const  sendData = async (contact, products) => {
+  const dataOrder = {
+    "contact": contact,
+    "products": products,
+  }
+  console.log(dataOrder)
+  const result = fetch('http://localhost:3000/api/cameras/order', {  //fetch méthode qui fait un appel au serveur 
+    method: 'POST',
+    body: JSON.stringify(dataOrder),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(result => JSON.parse(result)) //JSON.parse() = transforme du text en JSON
+  .catch(error => console.log('error', error));
+        
+  return result
+}

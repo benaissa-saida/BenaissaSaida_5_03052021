@@ -1,19 +1,28 @@
 // ********************************* VARIABLES **********************************
-let commandeStorage = JSON.parse(localStorage.getItem("orderId")); 
-// let orderCommandShow = document.getElementById('orderCommand')
-// let orderCommandhidden = document.getElementById('orderCommandhidden')
-let commandDescription = 
-`
-<h3>Votre commande est passée !</h3>
-<p>Nous vous remercions ${commandeStorage.contact.firstName} ${commandeStorage.contact.lastName}, et espérons vous revoir bientôt ! =)</p>
-<p>Votre identifiant de commande est le : ${commandeStorage.orderId}</p>
-<p>Le montant de vos achats est de : </p>
-`
+const myOrder = JSON.parse(localStorage.getItem('successOrder'))
+
 
 // ********************************* RÉCUPÉRATION COMMANDE **********************
-if (commandeStorage !== null){
-    let commande = document.getElementById('commandId');
+if(myOrder){
+    const createdOrder = () => {
+        let htmlOfMyOrder = 
+        `
+        <h3 class="mb-5">Votre commande est passée !</h3>
+        <h4>Merci <strong>${myOrder.contact.firstName} ${myOrder.contact.lastName}</strong>!</h4>
+        <br>
+        <p>Nous espérons vous revoir bientôt ! =)</p>
+        <p>N° de commande : <strong>${myOrder.orderId}</strong></p>
+        `
+        
+    document.getElementById('commandId').innerHTML = htmlOfMyOrder;
+    localStorage.removeItem('object', 'successOrder')
+    }
+    createdOrder();
+    
 // ********************************* FONCTION CHARGEMENT CONTENU ****************
+} 
 
 
+if(!myOrder){
+    document.location.href = "index.html"
 }
