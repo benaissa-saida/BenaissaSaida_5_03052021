@@ -51,6 +51,7 @@
                 </tr>
             </thead>
               <tbody id="listProduct">
+                <!-- Ici se trouveront nos différents choix -->
               </tbody>
               <tfoot>
                 <tr class="align-middle d-flex flex-column  align-items-center d-md-table-row mb-4 gap-2 container-sm">
@@ -63,10 +64,11 @@
             </table> 
           </div>
         </section>
-        <section class="container container-lg ">
-          <div id="form-err"></div>
+        <section class="container container-lg">
+          
           <form id="form" class="hidden" onsubmit="return sendForm(event)">
             <p class=""><strong>Veuillez remplir le formulaire pour valider votre commande !</strong></p>
+            <div id="form-err"></div>
             <div class="form-row mb-2 g-2">
               <div class="col-md-4 mb-2">
                 <label for="firstName">Nom</label>

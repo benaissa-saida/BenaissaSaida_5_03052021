@@ -1,7 +1,6 @@
 // *************** FONCTION REMPLISSAGE CARTES ET REDIRECTION *******************
 
 
-
 const fillUpCard = async (urlApi) => {
 
   const productCart = await getAll(urlApi);
@@ -10,7 +9,6 @@ const fillUpCard = async (urlApi) => {
 
   for (const product of productCart) {
     
-    console.log("product", product)
     cardProduct += 
     `<a href="./produit.html?/id=${product._id}" class="text-center text-decoration-none text-reset">
         <img src="${product.imageUrl}" id="img" class=" card-img-top" alt="img-appareil-photo">
@@ -27,5 +25,5 @@ const fillUpCard = async (urlApi) => {
 }
 
 
-fillUpCard(urlApiCameras)
+fillUpCard(urlApiCameras) //Fonction contenant la variable de l'api
   .catch(error => { document.getElementById("cardProduct").innerHTML = error.message });

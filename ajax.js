@@ -1,8 +1,8 @@
-// // ************************* VARIABLES APPEL AJAX **************************
+ // ******************************** VARIABLES APPEL AJAX **********************************
 const urlApiCameras = "http://localhost:3000/api/cameras";
 
 
-
+// ************************************** REQUETE GET ***************************************
 const getAll = async apiUrl => {
 
   const result = fetch(apiUrl)
@@ -54,7 +54,7 @@ const getId = async apiUrl => {
 };
 
 
-//***********************************************************************************************
+//**************************************** REQUETE POST **********************************************
 
 
 const  sendData = async (contact, products) => {

@@ -16,7 +16,7 @@ let product;
 
 //******** Récupérer id de la page produit choisie ainsi que son chemin *********
 const id = window.location.search.split("=")[1];
-// console.log(id);
+
 const url = `http://localhost:3000/api/cameras/${id}`;
 
 // ******************************** POPUP ***************************************

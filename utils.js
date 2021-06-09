@@ -1,55 +1,56 @@
 //************************************************** VARIABLES ***********************************************/
-// let objectStorage = JSON.parse(localStorage.getItem('object'))
+let objectStorage = JSON.parse(localStorage.getItem('object'))
 
 //************************************* Fonctions pour le calcul du prix *************************************/
 
+// Fonction qui multiplie le prix avec la quantité de ce même produit
 const calcTotalproduct = (product) => {
 	
-    return product.price * product.quantity;
+  return product.price * product.quantity;
 };
 
-
+//Fonction qui calcule la somme totale des différents produits
 const calcTotal = () => {
-    let objectStorage = localStorage.getItem('object')
-    ? JSON.parse(localStorage.getItem('object'))
-    : [];
-  let summTotal = 0;
+  let objectStorage = localStorage.getItem('object')
+  ? JSON.parse(localStorage.getItem('object'))
+  : [];
+let summTotal = 0;
 
-  for (let product of objectStorage) {
+for (let product of objectStorage) {
 
-      productPrice = calcTotalproduct(product);
-      summTotal = summTotal + productPrice;
-  }
-  return summTotal;
+    productPrice = calcTotalproduct(product);
+    summTotal = summTotal + productPrice;
+}
+return summTotal;
 }
 
 
-//************************************* Fonction supprime le produit *************************************/
 
+//************************************* Fonction supprime le produit du panier *************************************/
 
 function deleteProduct () {
-    // Supprime le produit du LocalStorage
-    let item = this.getAttribute("id").split("_")[1];
-    let itemToDelete = objectStorage.find(e => e._id == item);
-    let indexItem = objectStorage.indexOf(itemToDelete);
-  
-    objectStorage.splice(indexItem, 1);
-  
-    localStorage.setItem('object', JSON.stringify(objectStorage));
-  
-    // Delete html showing the product
-    let divToDelete = this.parentElement.parentElement;
-    divToDelete.remove();
-  
-    // Montre le nouveau prix des différents produits
-    totalPrice.textContent = calcTotal();
-    console.log("item", item);
-    console.log("itemToDelete", itemToDelete);
-    console.log("indexItem", indexItem)
-  }
+  // Supprime le produit du LocalStorage
+  let item = this.getAttribute("id").split("_")[1];
+  let itemToDelete = objectStorage.find(e => e._id == item);
+  let indexItem = objectStorage.indexOf(itemToDelete);
+
+  objectStorage.splice(indexItem, 1);
+
+  localStorage.setItem('object', JSON.stringify(objectStorage));
+
+  // Supprime l'html qui montre le produit (<tr>)
+  let trToDelete = this.parentElement.parentElement;
+  trToDelete.remove();
+
+  // Montre le nouveau prix des différents produits
+  totalPrice.textContent = calcTotal();
+  console.log("item", item);
+  console.log("itemToDelete", itemToDelete);
+  console.log("indexItem", indexItem)
+}
 
 //************************************* Fonctions pour le formulaire *************************************/
-
+// Fonction qui permet de créer un objet à chaque infos contact
 const getUserData = () => {
     const contact = {
       firstName: document.getElementById('firstName').value,
@@ -63,12 +64,15 @@ const getUserData = () => {
   }
   
   
-
+/*Fonction asynchrone qui attendra d'avoir toutes
+/* les informations avant d'envoyer les données 
+au serveur. Ce dernier nous renverra un orderId*/
   const createOrder = async () => {
     const contact = getUserData();
     const products = [];
     for (const productInCart of objectStorage){
         products.push(productInCart._id);
+        //pousse l'id des produits dans un nouvel objet "products"
     }
 
     const result = await sendData(contact, products);

@@ -1,9 +1,11 @@
-// ********************************* VARIABLES **********************************
+// ********************************* VARIABLES RÉCUPÉRATION COMMANDE **********************************
 const myOrder = JSON.parse(localStorage.getItem('successOrder'))
 
 
-// ********************************* RÉCUPÉRATION COMMANDE **********************
+// ********************************* FONCTION CHARGEMENT CONTENU **********************
+
 if(myOrder){
+    //Fonction qui affiche le message destiné au user
     const createdOrder = () => {
         let htmlOfMyOrder = 
         `
@@ -15,14 +17,13 @@ if(myOrder){
         `
         
     document.getElementById('commandId').innerHTML = htmlOfMyOrder;
-    localStorage.removeItem('object', 'successOrder')
+    localStorage.removeItem('object', 'successOrder') //Retire du localStorage les différents objets
     }
     createdOrder();
-    
-// ********************************* FONCTION CHARGEMENT CONTENU ****************
 } 
 
 
 if(!myOrder){
     document.location.href = "index.html"
+    //Renvoie l'utilisateur sur la page d'accueil
 }

@@ -1,19 +1,19 @@
-//**************************************** VARIABLES *********************************** */
+//**************************************** FONCTION D'ENVOI FORMULAIRE *********************************** */
  
-
-
 
 const sendForm = (e) => {
   
     console.log(e);
     e.preventDefault()
+
     document.getElementById('form-err').innerHTML = ""
     const contact = getUserData();
     const errors = [];
-    console.log('contact', contact)
+
     const regexNoNum = /^[A-Za-zàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$/;
     const regexZipFr = /\b\d{5}\b/;
-    document.getElementById('firstName').classList.remove('is-valid', 'is-invalid')
+
+    document.getElementById('firstName').classList.remove('is-valid', 'is-invalid') // Permet de changer la couleur des inputs 
     document.getElementById('lastName').classList.remove('is-valid', 'is-invalid')
     document.getElementById('address').classList.remove('is-valid', 'is-invalid')
     document.getElementById('city').classList.remove('is-valid', 'is-invalid')
@@ -44,6 +44,7 @@ const sendForm = (e) => {
     }
     document.getElementById('city').classList.add(cityValid ? 'is-valid' : 'is-invalid')
     
+     // Test zip
     let zipValid = true
     if (!regexZipFr.test(contact.zip)) {
         errors.push("ce code postal n'est pas valide. exemple : 75001")
@@ -61,15 +62,17 @@ const sendForm = (e) => {
     document.getElementById('email').classList.add(emailValid ? 'is-valid' : 'is-invalid')
   
     if(!errors.length) {
-        createOrder();
+        //Si pas d'erreur créer la commande
+        createOrder(); 
   
     } else {
+        //Sinon afficher les différentes zones erronées
         let htmlError = ''
         for(const error of errors) {
             htmlError += `${error} <br/>`
         }
       document.getElementById('form-err').innerHTML = htmlError;
-      document.getElementById('form-err').classList.add('text-danger');
+      document.getElementById('form-err').classList.add('text-danger'); // Donne une couleur rouge au texte
     };
   
 }
