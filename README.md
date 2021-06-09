@@ -3,4 +3,4 @@ Le site traitera des appareils photos.
 
 Installation: 
 
-Pour que le front fonctionne, il faudra utiliser le back-end.
+Pour que le front fonctionne, il faudra utiliser le back-end (https://github.com/OpenClassrooms-Student-Center/JWDP5)
