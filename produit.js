@@ -81,6 +81,7 @@ addStorage =  (product) => {
     checkProduct.quantity++;
     } else {
     product.quantity = 1;
+    product.lenses = lenses.value;
     objectStorage.push(product);
     }
 

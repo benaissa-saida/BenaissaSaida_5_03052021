@@ -21,6 +21,7 @@ function  showCartContent (){
           <h3 class="fw-light">${productInCart.name}</h3>
           <img src="${productInCart.imageUrl}" alt="voir-produit-${productInCart.name}" height="100" width="120">
         </td>
+        <td class="fw-light text-center">${productInCart.lenses}</td>
         <td class="fw-light text-center">${productInCart.price}</td>
         <td class="fw-light text-center">
             <div id="quantity_${productInCart._id}" class="btn-group me-2" role="group" aria-label="quantité de ${productInCart.name}">

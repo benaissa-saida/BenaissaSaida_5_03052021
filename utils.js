@@ -1,6 +1,7 @@
 //************************************************** VARIABLES ***********************************************/
 let objectStorage = JSON.parse(localStorage.getItem('object'))
 
+
 //************************************* Fonctions pour le calcul du prix *************************************/
 
 // Fonction qui multiplie le prix avec la quantité de ce même produit
@@ -70,13 +71,17 @@ au serveur. Ce dernier nous renverra un orderId*/
   const createOrder = async () => {
     const contact = getUserData();
     const products = [];
+    let orderSuccess = [];
+    const total = calcTotal();
     for (const productInCart of objectStorage){
-        products.push(productInCart._id);
-        //pousse l'id des produits dans un nouvel objet "products"
+      products.push(productInCart._id);
+      //pousse l'id des produits dans un nouvel objet "products"
     }
 
     const result = await sendData(contact, products);
-    localStorage.setItem("successOrder", JSON.stringify(result));
+    orderSuccess.push(result, total)
+    localStorage.setItem("successOrder", JSON.stringify(orderSuccess));
     document.location.href = "commande.html";
     return result;
+
   };
