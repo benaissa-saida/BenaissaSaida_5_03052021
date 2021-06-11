@@ -8,7 +8,7 @@ let formVisibility = document.getElementById('form');
 
 // ********************************* FONCTIONS **********************************
 
-//Montre les produits dans le panier
+//Montre les produits dans le panier grâce aux données du localStorage
 function  showCartContent (){
   for (let productInCart of objectStorage) {
     blockCartProduct +=

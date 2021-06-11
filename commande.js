@@ -4,7 +4,7 @@ const myOrder = JSON.parse(localStorage.getItem('successOrder'))
 
 // ********************************* FONCTION CHARGEMENT CONTENU **********************
 
-if(myOrder){
+if(myOrder){ //Si l'objet myOrder existe dans le local storage
     //Fonction qui affiche le message destiné au user
     const createdOrder = () => {
         let htmlOfMyOrder = 
