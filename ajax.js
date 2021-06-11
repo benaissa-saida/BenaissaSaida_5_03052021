@@ -18,7 +18,7 @@ const getAll = async apiUrl => {
     return response.json();
   })
   .then(result => {
-    //Nous permet de convertire les données d'une chaine avant de les transmettre 
+    //Nous permet de convertir les données d'une chaine avant de les transmettre 
     const data = JSON.parse(JSON.stringify(result))
     data.map(e => e.price = e.price / 100);
     // Divise le prix par 100 pour convertir les centimes en euros
@@ -43,7 +43,7 @@ const getId = async apiUrl => {
     return response.json();
   })
   .then(result => {
-    //Nous permet de convertire les données d'une chaine avant de les transmettre 
+    //Nous permet de convertir les données d'une chaine avant de les transmettre 
     const data = JSON.parse(JSON.stringify(result))
     data.price = data.price / 100;
     // Divise le prix par 100 pour convertir les centimes en euros
@@ -63,7 +63,8 @@ const  sendData = async (contact, products) => {
     "products": products,
   }
   console.log(dataOrder)
-  const result = fetch('http://localhost:3000/api/cameras/order', {  //fetch méthode qui fait un appel au serveur 
+  const result = fetch('http://localhost:3000/api/cameras/order', {  
+    //fetch méthode qui fait un appel au serveur 
     method: 'POST',
     body: JSON.stringify(dataOrder),
     headers: {

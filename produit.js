@@ -15,19 +15,22 @@ let productPrice = document.getElementById("priceProduct");
 let product; 
 
 //******** Récupérer id de la page produit choisie ainsi que son chemin *********
-const id = window.location.search.split("=")[1]; //Coupe le lien http en deux, pour avoir seulement id
+const id = window.location.search.split("=")[1]; 
+//Coupe le lien http en deux, pour avoir seulement id
 
 const url = `http://localhost:3000/api/cameras/${id}`; //Id introduit ensuite dans l'url
 
 // ******************************** POPUP ***************************************
 // Fonction d'ouverture popup
-btnPopup.addEventListener('click',openPopup); //rècupère l'événement clic sur le bouton btnPopup et déclenche la fonction openPopup.
+btnPopup.addEventListener('click',openPopup); 
+//rècupère l'événement clic sur le bouton btnPopup et déclenche la fonction openPopup.
 function openPopup() {
 overlay.style.display='block'; //montre le popup
 };
 
 // Fonction de fermeture popup
-btnClose.addEventListener('click',closePopup); //rècupère l'événement clic sur le bouton btnPopup et déclenche la fonction ClosePopup.
+btnClose.addEventListener('click',closePopup); 
+//rècupère l'événement clic sur le bouton btnPopup et déclenche la fonction ClosePopup.
 function closePopup() {
 overlay.style.display='none'; //cache le popup
 };
@@ -74,7 +77,9 @@ addStorage =  (product) => {
  /* de rester stockés sur leur page de navigation */
   addCart = () =>{ 
 
-    let objectStorage = localStorage.getItem("object") ? JSON.parse(localStorage.getItem("object")) : []; //permet d'avoir nos items stockés précèdemment dans le local Storage
+    let objectStorage = localStorage.getItem("object") ? 
+    JSON.parse(localStorage.getItem("object")) 
+    : []; //permet d'avoir nos items stockés précèdemment dans le local Storage
 
     const checkProduct = objectStorage.find((e) => e._id === id);
     if (checkProduct) {
@@ -87,10 +92,12 @@ addStorage =  (product) => {
     }
 
 
-    localStorage.setItem("object", JSON.stringify(objectStorage)); //stock notre key et sa valeur qui n'est autre que notre objet objectStorage
+    localStorage.setItem("object", JSON.stringify(objectStorage)); 
+    //stock notre key et sa valeur qui n'est autre que notre objet objectStorage
 
     console.log(localStorage);
   } 
-  document.getElementById("cart").addEventListener("click", addCart); //Au clic sur le bouton envoie nos choix dans le localStorage
+  document.getElementById("cart").addEventListener("click", addCart); 
+  //Au clic sur le bouton envoie nos choix dans le localStorage
 }
 

@@ -45,9 +45,9 @@ function deleteProduct () {
 
   // Montre le nouveau prix des différents produits
   totalPrice.textContent = calcTotal();
-  console.log("item", item);
-  console.log("itemToDelete", itemToDelete);
-  console.log("indexItem", indexItem)
+
+  location.reload();
+
 }
 
 //************************************* Fonctions pour le formulaire *************************************/
