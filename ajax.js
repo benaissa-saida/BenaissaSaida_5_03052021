@@ -5,7 +5,7 @@ const urlApiCameras = "http://localhost:3000/api/cameras";
 // ************************************** REQUETE GET ***************************************
 const getAll = async apiUrl => {
 
-  const result = fetch(apiUrl)
+  const result = await fetch(apiUrl)
   .then(response => {
     if (response.status >= 400) {
       //!reponse.ok
@@ -30,7 +30,7 @@ const getAll = async apiUrl => {
 
 const getId = async apiUrl => {
 
-  const result = fetch(apiUrl)
+  const result = await fetch(apiUrl)
   .then(response => {
     if (response.status >= 400) {
       //!reponse.ok
@@ -63,7 +63,7 @@ const  sendData = async (contact, products) => {
     "products": products,
   }
   console.log(dataOrder)
-  const result = fetch('http://localhost:3000/api/cameras/order', {  
+  const result = await fetch('http://localhost:3000/api/cameras/order', {  
     //fetch méthode qui fait un appel au serveur 
     method: 'POST',
     body: JSON.stringify(dataOrder),
