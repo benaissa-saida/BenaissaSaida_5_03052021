@@ -10,11 +10,6 @@ let formVisibility = document.getElementById('form');
 
 //Montre les produits dans le panier grâce aux données du localStorage
 function  showCartContent (){
-  // let blockCartProduct = '';
-  // if (!objectStorage || objectStorage.length === 0 ){
-  
-
-  // } 
   
   if (objectStorage) {
     for (let productInCart of objectStorage) {
@@ -56,9 +51,12 @@ if (objectStorage) {
 } 
 
 if (!objectStorage || objectStorage.length === 0){
+  //Si pas d'objet dans le localStorage 
   formVisibility.classList.add('hidden');
+  //cache le formulaire 
 
   document.getElementById('emptyCart').innerHTML = 
+  //modifie la page panier
     `
     <div class="py-5">
     <h3 class="mb-4"> Votre panier est bien vide..</h3>
